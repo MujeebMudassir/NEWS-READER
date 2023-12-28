@@ -1,14 +1,11 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import NewsItem from "./NewsItem";
-import { useMediaQuery } from "react-responsive";
 
 const NewsBoard = () => {
   const [articles, setArticles] = useState([]);
-  const isMobile768 = useMediaQuery({ maxWidth: 768 });
-  const isMobile1000 = useMediaQuery({ maxWidth: 1000 });
-  const envKey = import.meta.env.VITE_REACT_APP_API_KEY;
-  const ApiUrl = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${envKey}`;
+
+  const ApiUrl = `https://newsapi.org/v2/top-headlines?country=us&apiKey=260f551ea35242c8a7c94e708dfd4aae`;
 
   const callApiForArticles = async () => {
     const response = await fetch(ApiUrl);
